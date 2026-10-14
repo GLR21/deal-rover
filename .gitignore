@@ -1,0 +1,50 @@
+# Secrets (run.sh holds the Telegram bot token)
+run.sh
+.env
+*.token
+
+# Personal configuration (copy the *.example files to create yours)
+targets.json
+targets_*.json
+messages.json
+
+# Runtime state and logs
+state*.json
+*.log
+
+# Your own plugins: only the interface and the template are versioned.
+# Delete these lines if you want to commit your providers.
+providers/*
+!providers/__init__.py
+!providers/base.py
+!providers/_example.py
+
+# Local-only helpers
+run_ingressos.sh
+run_tickets.sh
+
+# AI coding-agent notes and settings (kept local)
+.agents/
+.claude
+AGENTS.md
+CLAUDE.md
+
+# Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+
+# Backups and temporary files
+*.bak
+*.bkp
+*.tmp
+
+# OS / editors
+*:Zone.Identifier
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

@@ -1,0 +1,31 @@
+#!/bin/bash
+# ============================================================
+# Template for run.sh. Copy it and fill in your values:
+#
+#   cp run.sh.example run.sh
+#   chmod +x run.sh
+#   nano run.sh   # paste your bot token and chat id
+#
+# The real run.sh is NOT versioned (it is in .gitignore): it
+# holds your Telegram bot token, which is a secret.
+# ============================================================
+
+# Bot token, from @BotFather on Telegram.
+export TELEGRAM_TOKEN="put_your_bot_token_here"
+
+# Your chat id (e.g. from your bot's getUpdates).
+export TELEGRAM_CHAT_ID="put_your_chat_id_here"
+
+# DEFAULT target price: alert when a price drops to it. Applies to
+# targets without their own "target_price". Optional, defaults to 3000.
+export DEFAULT_TARGET_PRICE="3000"
+
+# Price format of your stores (optional; default "R$ 1.234,56").
+# US dollar example:
+# export CURRENCY_FORMAT='${}'
+# export DECIMAL_SEPARATOR='.'
+# export ACCEPT_LANGUAGE='en-US,en;q=0.9'
+
+# Go to the project folder and run one check (non-interactive).
+cd "$(dirname "$0")" || exit 1
+./.venv/bin/python monitor.py check
